@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package user;
+
+message User{
+  int32 id = 1;
+  string username = 2;
+  float created_at = 3;
+  float updated_at = 4;
+  bool is_active = 5;
+  string password = 6;
+  string firstname = 7;
+  string lastname = 8;
+  string email = 9;
+  string mobile = 10;
+  bool is_superuser = 11;
+  bool is_staff = 12;
+  bool is_mobile_verified = 13;
+  bool is_email_verified = 14;
+}
+
+message UserCreateRequest{
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  string mobile = 4;
+}
+
+message UserLoginRequest{
+  string username = 1;
+  string password = 2;
+}
+
+message UserLogoutRequest{
+  string token = 1;
+}
+
+message UserUpdateRequest{
+  string token = 1;
+  string firstname = 2;
+  string lastname = 3;
+}
+
+message IssueOtpRequest{
+  string token = 1;
+  int32 type = 2;
+}
+
+message UserMeRequest{
+  string token = 1;
+}
+
+message EvaluateOtpRequest{
+  string token = 1;
+  string otp = 2;
+}
+
+message UserLoginResponse{
+  string token = 1;
+}
+
+message MessageResponse{
+  bool success = 1;
+  string msg = 2;
+}
+
+service UserAPI{
+  rpc Create (UserCreateRequest) returns (User);
+  rpc Me (UserMeRequest) returns (User);
+  rpc Update (UserUpdateRequest) returns (User);
+  rpc Login (UserLoginRequest) returns (UserLoginResponse);
+  rpc Logout (UserLogoutRequest) returns (MessageResponse);
+  rpc Issue_otp (IssueOtpRequest) returns (MessageResponse);
+  rpc Evaluate_otp (EvaluateOtpRequest) returns (MessageResponse);
+}

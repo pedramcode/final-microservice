@@ -1,0 +1,10 @@
+sources:
+  - name: User
+    handler:
+      grpc:
+        endpoint: 127.0.0.1:50051
+        protoFilePath:
+          file: ./contracts/proto/user.proto
+          load:
+            includeDirs:
+              - ./contracts/proto

@@ -1,0 +1,5 @@
+sqlalchemy
+grpcio
+grpcio-tools
+redis
+requests

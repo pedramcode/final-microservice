@@ -1,0 +1,16 @@
+{
+  "name": "service_mesh",
+  "version": "1.0.0",
+  "description": "GraphQL mesh service (data layer)",
+  "main": "server.js",
+  "scripts": {
+    "start": "mesh dev"
+  },
+  "author": "Pedram Dehghanpour",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.69.2",
+    "@graphql-mesh/grpc": "^0.21.17",
+    "graphql": "^15.8.0"
+  }
+}

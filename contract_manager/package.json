@@ -1,0 +1,16 @@
+{
+  "name": "contract_manager",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Protobuf microservice contract manager",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "Pedram Dehghanpour",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
